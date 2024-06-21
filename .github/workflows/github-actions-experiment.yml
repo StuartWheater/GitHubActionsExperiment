@@ -4,7 +4,9 @@ on: [push]
 jobs:
   build-datashield-base-image:
     runs-on: ubuntu-latest
+    name: Build Docker Images
     steps:
-      - name: Build docker Image
-        using: 'docker'
-      image: 'Dockerfile'
+      - name: Build Base Client Docker Image
+        run docker build -t datashield/githubactions-dsclient-base:latest --file dsClient_Dockerfile .
+        run echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+        run docker push datashield/githubsactions-dsclient-base:latest
