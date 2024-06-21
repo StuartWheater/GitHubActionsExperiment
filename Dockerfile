@@ -19,7 +19,7 @@ RUN sudo R -q -e "install.packages(c('MolgenisAuth', 'MolgenisArmadillo', 'DSMol
 RUN sudo R -q -e "install.packages(c('DescTools','e1071'), dependencies=TRUE, repos='https://cloud.r-project.org')"
 RUN sudo R -q -e "install.packages(c('mvtnorm', 'expm', 'Exact', 'gld'), dependencies=TRUE, repos='https://cloud.r-project.org')"
 
-RUN sudo R -q -e "library('devtools'); devtools::install_github(repo='datashield/dsDangerClient', ref='v6.3.0-dev', dependencies = TRUE)"
+RUN sudo R -q -e "library('devtools'); devtools::install_github(repo='datashield/dsDangerClient', ref='v6.3.1-dev', dependencies = TRUE)"
 
 # XML grep for coverage report merging
 RUN sudo apt-get install xml-twig-tools -y
