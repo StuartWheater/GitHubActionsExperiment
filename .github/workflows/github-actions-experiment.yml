@@ -6,7 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Build Docker Images
     steps:
-      - name: Build Base Client Docker Image
+      - name: Build Base Client Docker Image, stage 1
       - run: docker build -t datashield/githubactions-dsclient-base:latest --file dsClient_Dockerfile .
+      - name: Build Base Client Docker Image, stage 2
       - run: echo ${{ dockerhub.password }} | docker login -u ${{ dockerhub.user }} --password-stdin
+      - name: Build Base Client Docker Image, stage 3
       - run: docker push datashield/githubsactions-dsclient-base:latest
