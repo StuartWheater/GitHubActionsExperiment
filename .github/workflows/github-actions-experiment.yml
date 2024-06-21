@@ -2,8 +2,8 @@ name: DataSHIELD Docker image build
 run-name: ${{ github.actor }} is building Docker image
 on: [push]
 jobs:
-  Build-DataSHIELD-Base-Image:
+  build-datashield-base-image:
     runs-on: ubuntu-latest
-    runs:
+    steps:
       using: 'docker'
       image: 'Dockerfile'
