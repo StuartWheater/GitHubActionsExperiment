@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build Docker Images
     steps:
+      - uses: docker/setup-buildx-ation@3
       - name: Build Base Client Docker Image, stage 1
       - run: docker build -t datashield/githubactions-dsclient-base:latest --file dsClient_Dockerfile .
       - name: Build Base Client Docker Image, stage 2
