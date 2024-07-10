@@ -8,5 +8,5 @@ jobs:
       - uses: docker/setup-buildx-action@v3
       - uses: docker/build-push-action@v6
       - run: pwd
-      - run: docker build -t datashield/githubactions-dsclient-base:latest --file dsClient_Dockerfile .
+      - run: docker build -t datashield/githubactions-dsclient-base:latest --file ../dsClient_Dockerfile .
       - run: docker push datashield/githubsactions-dsclient-base:latest
